@@ -18,13 +18,15 @@ export default function ObjectFiltersForm() {
     defaultValues: {},
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = methods.handleSubmit((data) => console.log(data));
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className="">
-        <ObjectsPanel />
+      <form onSubmit={onSubmit} className="">
+        <ObjectsPanel handelSubmit={onSubmit} />
         <AdvancedFiltersObject />
+        <br />
+        {JSON.stringify(methods.getValues())}
       </form>
     </FormProvider>
   );

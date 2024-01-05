@@ -95,7 +95,7 @@ export default function ObjectsPanel({
         </Button>
 
         <select
-          {...register('', {
+          {...register('perPage', {
             onBlur: () => handelSubmit(),
             valueAsNumber: true,
           })}
